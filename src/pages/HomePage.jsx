@@ -24,7 +24,7 @@ export default function HomePage() {
 
     return (
         <PageContainer>
-            <h1>Selecione o filme</h1>
+            <h1>Em Cartaz</h1>
             <MoviesContainer>
                 {movies.map(movie => (
                     <MovieCard 
@@ -47,14 +47,17 @@ const PageContainer = styled.div`
     
     h1 {
         margin: 40px 0;
-        font-size: 24px;
+        font-size: 28px;
+        font-weight: 700;
+        color: #FFFFFF;
     }
 `;
 
 const MoviesContainer = styled.div`
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 30px;
     padding: 0 20px;
     margin-bottom: 40px;
