@@ -39,6 +39,13 @@ const GlobalStyle = createGlobalStyle`
         padding-top: 70px;
         min-height: 100vh;
     }
+
+    main {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 `;
 
 export default GlobalStyle;
