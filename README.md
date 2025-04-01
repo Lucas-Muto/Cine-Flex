@@ -1,6 +1,6 @@
 # 🎬 Cineflex
 
-Cineflex é uma aplicação web para reserva de ingressos de cinema, desenvolvida como projeto do bootcamp da [Driven Education](https://www.driven.com.br/).
+Cineflex é uma aplicação web para reserva de ingressos de cinema focado apenas para mobile, desenvolvida como projeto do bootcamp da [Driven Education](https://www.driven.com.br/).
 
 ## 🎯 Sobre o Projeto
 
