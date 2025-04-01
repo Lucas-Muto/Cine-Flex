@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { api } from '../services/api';
 import SessionDay from '../components/SessionDay';
 import Loading from '../components/Loading';
+import { colors } from '../styles/colors';
 
 export default function SessionsPage() {
     const { idFilme } = useParams();
@@ -38,12 +39,12 @@ export default function SessionsPage() {
                 ))}
             </SessionsContainer>
             <FooterContainer>
-                <div>
-                    <img src={sessions.posterURL} alt={sessions.title} />
-                </div>
-                <div>
-                    <p>{sessions.title}</p>
-                </div>
+                <MovieInfo>
+                    <PosterContainer>
+                        <img src={sessions.posterURL} alt={sessions.title} />
+                    </PosterContainer>
+                    <MovieTitle>{sessions.title}</MovieTitle>
+                </MovieInfo>
             </FooterContainer>
         </PageContainer>
     );
@@ -58,7 +59,9 @@ const PageContainer = styled.div`
     
     h1 {
         margin: 40px 0;
-        font-size: 24px;
+        font-size: 28px;
+        font-weight: 700;
+        color: ${colors.text};
     }
 `;
 
@@ -71,36 +74,37 @@ const SessionsContainer = styled.div`
 const FooterContainer = styled.div`
     width: 100%;
     height: 120px;
-    background-color: #DFE6ED;
-    border-top: 1px solid #9EADBA;
+    background-color: #2B2D36;
+    border-top: 1px solid #4E5A65;
     display: flex;
     align-items: center;
     padding: 14px 10px;
     position: fixed;
     bottom: 0;
+`;
 
-    div:first-child {
-        background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+const MovieInfo = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 14px;
+`;
+
+const PosterContainer = styled.div`
+    width: 64px;
+    height: 89px;
+    padding: 8px;
+    background: #212226;
+    border-radius: 2px;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 2px;
-        padding: 8px;
-        margin-right: 14px;
-        
-        img {
-            width: 48px;
-            height: 72px;
-            object-fit: cover;
-        }
     }
+`;
 
-    div:last-child {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        p {
-            font-size: 26px;
-            color: #293845;
-        }
-    }
+const MovieTitle = styled.p`
+    font-size: 26px;
+    color: ${colors.text};
 `;
