@@ -34,7 +34,7 @@ const LegendItem = styled.div`
     
     p {
         font-size: 13px;
-        color: #4E5A65;
+        color: #FFFFFF;
     }
 `;
 
@@ -44,10 +44,9 @@ const SeatExample = styled.div`
     border-radius: 50%;
     
     background-color: ${props => 
-        props.isSelected ? '#1AAE9E' : 
-        props.isAvailable ? '#C3CFD9' : '#FBE192'};
+        props.isSelected ? '#FADBC5' : 
+        props.isAvailable ? '#9DB899' : '#2B2D36'};
     
-    border: 1px solid ${props => 
-        props.isSelected ? '#0E7D71' : 
-        props.isAvailable ? '#808F9D' : '#F7C52B'};
+    border: ${props => 
+        props.isSelected ? '2px solid #EE897F' : 'none'};
 `;
