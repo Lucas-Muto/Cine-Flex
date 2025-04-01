@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { colors } from '../styles/colors';
-import logo from '../assets/clapperboard 1.svg';
+import logo from '../assets/clapperboard.svg';
 
 export default function Header() {
     const navigate = useNavigate();
