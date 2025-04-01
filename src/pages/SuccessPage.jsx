@@ -15,27 +15,32 @@ export default function SuccessPage() {
         <PageContainer>
             <h1>Pedido feito com sucesso!</h1>
 
-            <TextContainer>
-                <strong>Filme e sessão</strong>
-                <p>{movie}</p>
-                <p>{date} - {time}</p>
-            </TextContainer>
+            <SuccessCard>
+                <Section>
+                    <SectionTitle>Filme e sessão</SectionTitle>
+                    <Divider />
+                    <p>{movie}</p>
+                    <p>{date} - {time}</p>
+                </Section>
 
-            <TextContainer>
-                <strong>Ingressos</strong>
-                {seats.map((seat, index) => (
-                    <p key={index}>Assento {seat}</p>
-                ))}
-            </TextContainer>
+                <Section>
+                    <SectionTitle>Ingressos</SectionTitle>
+                    <Divider />
+                    {seats.map((seat, index) => (
+                        <p key={index}>Assento {seat}</p>
+                    ))}
+                </Section>
 
-            <TextContainer>
-                <strong>Comprador</strong>
-                <p>Nome: {buyer}</p>
-                <p>CPF: {cpf}</p>
-            </TextContainer>
+                <Section>
+                    <SectionTitle>Comprador(a)</SectionTitle>
+                    <Divider />
+                    <p>Nome: {buyer}</p>
+                    <p>CPF: {cpf}</p>
+                </Section>
+            </SuccessCard>
 
             <Button onClick={() => navigate('/')}>
-                Voltar para Home
+                Voltar para a tela inicial
             </Button>
         </PageContainer>
     );
@@ -48,7 +53,7 @@ const PageContainer = styled.div`
     padding: 30px 20px;
     
     h1 {
-        color: #247A6B;
+        color: #9DB899;
         font-weight: bold;
         font-size: 24px;
         margin-bottom: 30px;
@@ -56,39 +61,57 @@ const PageContainer = styled.div`
     }
 `;
 
-const TextContainer = styled.div`
+const SuccessCard = styled.div`
     width: 100%;
     max-width: 350px;
-    margin-bottom: 30px;
+    background-color: #2B2D36;
+    border-radius: 8px;
+    padding: 24px;
+`;
+
+const Section = styled.div`
+    width: 100%;
+    margin-bottom: 24px;
     
-    strong {
-        font-weight: bold;
-        font-size: 24px;
-        color: #293845;
-        margin-bottom: 10px;
-        display: block;
+    &:last-child {
+        margin-bottom: 0;
     }
     
     p {
-        font-size: 22px;
-        color: #293845;
+        font-size: 18px;
+        color: #FFFFFF;
         margin: 5px 0;
     }
+`;
+
+const SectionTitle = styled.h2`
+    font-size: 20px;
+    font-weight: 700;
+    color: #EE897F;
+    margin-bottom: 10px;
+`;
+
+const Divider = styled.div`
+    width: 100%;
+    height: 1px;
+    background-color: #4E5A65;
+    margin-bottom: 10px;
 `;
 
 const Button = styled.button`
     width: 100%;
     max-width: 225px;
     height: 42px;
-    background-color: #E8833A;
+    background-color: #EE897F;
     border: none;
     border-radius: 3px;
-    color: white;
+    color: #2B2D36;
     font-size: 18px;
-    margin-top: 50px;
+    font-weight: 700;
+    margin-top: 30px;
     cursor: pointer;
     
     &:hover {
-        background-color: #c97432;
+        filter: brightness(0.95);
     }
 `;
