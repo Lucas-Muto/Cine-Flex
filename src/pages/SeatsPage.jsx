@@ -13,6 +13,7 @@ export default function SeatsPage() {
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [buyerName, setBuyerName] = useState("");
     const [buyerCPF, setBuyerCPF] = useState("");
+    const [cpfError, setCpfError] = useState("");
 
     useEffect(() => {
         api.get(`/showtimes/${idSessao}/seats`)
@@ -37,10 +38,27 @@ export default function SeatsPage() {
         });
     };
 
+    const handleCPFChange = (e) => {
+        const value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+        if (value.length <= 11) { // Limita a 11 dígitos
+            setBuyerCPF(value);
+            if (value.length === 11) {
+                setCpfError("");
+            } else {
+                setCpfError("CPF deve ter 11 dígitos");
+            }
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (selectedSeats.length === 0) {
             alert("Selecione pelo menos um assento!");
+            return;
+        }
+
+        if (buyerCPF.length !== 11) {
+            setCpfError("CPF deve ter 11 dígitos");
             return;
         }
 
@@ -59,7 +77,7 @@ export default function SeatsPage() {
                         time: session.name,
                         seats: selectedSeats.map(s => s.name),
                         buyer: buyerName,
-                        cpf: buyerCPF
+                        cpf: buyerCPF.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') // Formata o CPF
                     }
                 });
             })
@@ -104,10 +122,14 @@ export default function SeatsPage() {
                     CPF do comprador(a):
                     <input
                         required
-                        placeholder="Digite seu CPF..."
+                        placeholder="Digite apenas números..."
                         value={buyerCPF}
-                        onChange={e => setBuyerCPF(e.target.value)}
+                        onChange={handleCPFChange}
+                        maxLength="11"
+                        pattern="\d{11}"
+                        title="CPF deve conter 11 dígitos numéricos"
                     />
+                    {cpfError && <ErrorMessage>{cpfError}</ErrorMessage>}
                 </label>
 
                 <button type="submit">Reservar assento(s)</button>
@@ -169,6 +191,10 @@ const FormContainer = styled.form`
             
             &::placeholder {
                 color: #AFAFAF;
+            }
+
+            &:invalid {
+                border-color: #EE897F;
             }
         }
     }
@@ -234,4 +260,10 @@ const Divider = styled.div`
     height: 1px;
     background-color: #4E5A65;
     margin: 20px 0;
+`;
+
+const ErrorMessage = styled.span`
+    color: #EE897F;
+    font-size: 14px;
+    margin-top: 5px;
 `;
