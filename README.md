@@ -63,15 +63,6 @@ npm run dev
 
 A aplicação estará disponível em `http://localhost:5173`
 
-## 📦 Estrutura do Projeto
-cineflex/
-├── src/
-│ ├── assets/ # Imagens e recursos
-│ ├── components/ # Componentes reutilizáveis
-│ ├── pages/ # Páginas da aplicação
-│ ├── services/ # Configuração de serviços (API)
-│ └── styles/ # Estilos globais
-
 ## 🎯 Páginas
 
 - **Home (`/`)**: Lista de filmes em cartaz
