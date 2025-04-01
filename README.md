@@ -1,12 +1,117 @@
-# React + Vite
+# 🎬 Cineflex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cineflex é uma aplicação web para reserva de ingressos de cinema, desenvolvida como projeto do bootcamp da [Driven Education](https://www.driven.com.br/).
 
-Currently, two official plugins are available:
+## 🎯 Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido como parte do currículo da Driven Education, com o objetivo de criar uma aplicação completa de reserva de ingressos, aplicando conceitos importantes de React como:
+- Componentização
+- Rotas com React Router
+- Styled Components
+- Consumo de API
+- Estados e Props
+- Hooks
 
-## Expanding the ESLint configuration
+## 🚀 Deploy
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A aplicação está disponível em: [https://cine-flex-d4no.vercel.app]
+
+## 📱 Layout
+
+O layout da aplicação foi desenvolvido pela Driven Education e implementado fielmente conforme o design disponível no [Figma](https://www.figma.com/design/gd33iwfpYMAO8BQGH7QgDH/Cineflex?node-id=0-1&t=6c4SU52TsiAV5f6j-0). O projeto segue todas as especificações de design, incluindo:
+- Cores
+- Tipografia
+- Espacamentos
+- Dimensões
+- Posicionamentos
+- Estados dos elementos
+- Responsividade
+
+## 🚀 Tecnologias
+
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://axios-http.com/)
+
+## ✨ Funcionalidades
+
+- 📋 Lista de filmes em cartaz
+- 📅 Visualização de sessões disponíveis
+- 💺 Seleção interativa de assentos
+- 🎫 Reserva de ingressos
+- 📱 Design responsivo
+- 🎨 Interface moderna e intuitiva
+
+## 🛠️ Como executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/cineflex.git
+
+# Acesse a pasta do projeto
+cd cineflex
+
+# Instale as dependências
+npm install
+
+# Execute a aplicação
+npm run dev
+```
+
+A aplicação estará disponível em `http://localhost:5173`
+
+## 📦 Estrutura do Projeto
+cineflex/
+├── src/
+│ ├── assets/ # Imagens e recursos
+│ ├── components/ # Componentes reutilizáveis
+│ ├── pages/ # Páginas da aplicação
+│ ├── services/ # Configuração de serviços (API)
+│ └── styles/ # Estilos globais
+
+## 🎯 Páginas
+
+- **Home (`/`)**: Lista de filmes em cartaz
+- **Sessões (`/sessoes/:idFilme`)**: Horários disponíveis para o filme selecionado
+- **Assentos (`/assentos/:idSessao`)**: Seleção de assentos e formulário de compra
+- **Sucesso (`/sucesso`)**: Confirmação da reserva
+
+## 🎨 Paleta de Cores
+
+- **Principal**: `#EE897F`
+- **Secundária**: `#9DB899`
+- **Background**: `#212226`
+- **Cards**: `#2B2D36`
+- **Divisores**: `#4E5A65`
+
+## 🔍 Funcionalidades Principais
+
+### Seleção de Assentos
+- Assentos disponíveis em verde
+- Assentos selecionados em rosa
+- Assentos indisponíveis em cinza
+- Validação de CPF (11 dígitos)
+
+### Navegação
+- Header fixo com botão de voltar
+- Navegação intuitiva entre páginas
+- Footer informativo nas páginas relevantes
+
+## 📱 Responsividade
+
+A aplicação é totalmente responsiva, adaptando-se a diferentes tamanhos de tela:
+- Mobile (< 768px)
+- Tablet (768px - 1024px)
+- Desktop (> 1024px)
+
+## 🎓 Desenvolvido para
+[Driven Education](https://www.driven.com.br/)
+
+## 🎨 Design
+O layout da aplicação foi desenvolvido pela Driven Education e está disponível no [Figma](https://www.figma.com/design/gd33iwfpYMAO8BQGH7QgDH/Cineflex?node-id=0-1&t=6c4SU52TsiAV5f6j-0).
+
+## 👨‍💻 Desenvolvedor
+[Lucas Sabbag Muto](https://github.com/Lucas-Muto)
