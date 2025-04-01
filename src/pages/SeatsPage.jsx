@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { api } from '../services/api';
 import Seat from '../components/Seat';
-import Legend from '../components/Legend';
 import Loading from '../components/Loading';
 
 export default function SeatsPage() {
@@ -88,11 +87,11 @@ export default function SeatsPage() {
                 ))}
             </SeatsContainer>
 
-            <Legend />
+            <Divider />
 
             <FormContainer onSubmit={handleSubmit}>
                 <label>
-                    Nome do Comprador:
+                    Nome do comprador(a):
                     <input
                         required
                         placeholder="Digite seu nome..."
@@ -102,7 +101,7 @@ export default function SeatsPage() {
                 </label>
 
                 <label>
-                    CPF do Comprador:
+                    CPF do comprador(a):
                     <input
                         required
                         placeholder="Digite seu CPF..."
@@ -153,17 +152,20 @@ const FormContainer = styled.form`
     width: 100%;
     max-width: 350px;
     margin-top: 20px;
+    margin-bottom: 40px;
     
     label {
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
+        color: #FFFFFF;
         
         input {
             height: 40px;
             padding: 0 10px;
             border: 1px solid #D4D4D4;
             border-radius: 3px;
+            background: #FFFFFF;
             
             &::placeholder {
                 color: #AFAFAF;
@@ -174,15 +176,16 @@ const FormContainer = styled.form`
     button {
         width: 100%;
         height: 40px;
-        background-color: #E8833A;
+        background-color: #EE897F;
         border: none;
         border-radius: 3px;
-        color: white;
+        color: #2B2D36;
         font-size: 18px;
+        font-weight: 700;
         margin-top: 20px;
         
         &:hover {
-            background-color: #c97432;
+            filter: brightness(0.95);
         }
     }
 `;
@@ -190,8 +193,8 @@ const FormContainer = styled.form`
 const FooterContainer = styled.div`
     width: 100%;
     height: 120px;
-    background-color: #DFE6ED;
-    border-top: 1px solid #9EADBA;
+    background-color: #2B2D36;
+    border-top: 1px solid #4E5A65;
     display: flex;
     align-items: center;
     padding: 14px 10px;
@@ -199,7 +202,7 @@ const FooterContainer = styled.div`
     bottom: 0;
 
     div:first-child {
-        background: white;
+        background: #212226;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 2px;
         padding: 8px;
@@ -209,6 +212,7 @@ const FooterContainer = styled.div`
             width: 48px;
             height: 72px;
             object-fit: cover;
+            border-radius: 2px;
         }
     }
 
@@ -219,7 +223,15 @@ const FooterContainer = styled.div`
         
         p {
             font-size: 26px;
-            color: #293845;
+            color: #FFFFFF;
         }
     }
+`;
+
+const Divider = styled.div`
+    width: 100%;
+    max-width: 350px;
+    height: 1px;
+    background-color: #4E5A65;
+    margin: 20px 0;
 `;
