@@ -15,7 +15,7 @@ export default function Seat({ name, isAvailable, isSelected, onClick }) {
             isSelected={isSelected}
             onClick={handleClick}
         >
-            {name}
+            {isAvailable ? name : ''}
         </SeatItem>
     );
 }
@@ -29,18 +29,18 @@ const SeatItem = styled.div`
     justify-content: center;
     font-size: 11px;
     cursor: pointer;
+    color: #2B2D36;
     
     background-color: ${props => 
-        props.isSelected ? '#1AAE9E' : 
-        props.isAvailable ? '#C3CFD9' : '#FBE192'};
+        props.isSelected ? '#FADBC5' : 
+        props.isAvailable ? '#9DB899' : '#2B2D36'};
     
-    border: 1px solid ${props => 
-        props.isSelected ? '#0E7D71' : 
-        props.isAvailable ? '#808F9D' : '#F7C52B'};
+    border: ${props => 
+        props.isSelected ? '2px solid #EE897F' : 'none'};
 
     &:hover {
         ${props => props.isAvailable && !props.isSelected && `
-            filter: brightness(0.9);
+            filter: brightness(0.95);
         `}
     }
 `;
